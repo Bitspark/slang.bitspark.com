@@ -1,0 +1,14 @@
+TrySlang website
+Copyright 2026 Bitspark
+
+Website content and the public playground presentation originated in
+Bitspark/slang, deploy/public/site, at commit
+1491a8b (Restore tryslang.com with an isolated public playground).
+
+This website consumes Slang Design v0.2.1, pinned in design-system.lock.json.
+Its original styles, components, fonts, SVG artwork and license files are
+included unchanged under site/design/0.2.1/ in built releases.
+See that package's NOTICE and assets/licenses/ for font attribution.
+
+The Angular editor itself is distributed separately by Bitspark/slang-ui.
+The compatibility adapter in this repository only adds website presentation.
