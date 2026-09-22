@@ -52,7 +52,7 @@ def build():
             target.write_bytes(archive.read(item))
     (design / "source.json").write_text(json.dumps(lock, indent=2) + "\n", encoding="utf-8", newline="\n")
     (dist / "site/website-version.json").write_text(json.dumps(website, indent=2) + "\n", encoding="utf-8", newline="\n")
-    for name in ["editor-head.html", "editor-shell.html", "LICENSE", "NOTICE"]:
+    for name in ["LICENSE", "NOTICE"]:
         shutil.copyfile(ROOT / name, dist / name)
     release = ROOT / "release"
     release.mkdir(exist_ok=True)
