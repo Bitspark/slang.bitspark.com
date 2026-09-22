@@ -5,7 +5,7 @@
   <link rel="canonical" href="https://slang.bitspark.com/">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Slang — visual programming, in your browser</title>
-  <meta name="description" content="Connect blocks. Transform data. Run something real. Explore Slang's free, open-source visual programming playground.">
+  <meta name="description" content="Connect blocks. Transform data. Run something real. Explore Slang's free, open-source visual programming language and studio.">
   <link rel="icon" type="image/svg+xml" href="/design/0.2.1/assets/slang-mark.svg">
   <link rel="stylesheet" href="/design/0.2.1/styles/index.css">
   <link rel="stylesheet" href="/assets/site.css?v=1">
@@ -23,7 +23,7 @@
       <a href="#how-it-works">How it works</a>
       <a href="https://github.com/Bitspark/slang">GitHub ↗</a>
       <button class="sd-button sd-button--quiet sd-button--small" data-theme-toggle aria-label="Switch to dark theme">Dark theme</button>
-      <a class="sd-button sd-button--accent sd-button--small" href="https://tryslang.com/app/">Open playground →</a>
+      <a class="sd-button sd-button--accent sd-button--small" href="https://slang.run/">Open studio →</a>
     </nav>
   </header>
   <main id="main" tabindex="-1">
@@ -33,10 +33,10 @@
         <h1 id="hero-title">Small pieces.<br><em>Real possibilities.</em></h1>
         <p class="intro">Turn ideas into programs you can see. Connect blocks, transform data, and follow the flow from input to answer.</p>
         <div class="actions">
-          <a class="sd-button sd-button--accent" href="https://tryslang.com/app/">Build your first flow →</a>
+          <a class="sd-button sd-button--accent" href="https://slang.run/">Build your first flow →</a>
           <a class="sd-button sd-button--outline" href="/slang-app/index-1/">Read the quick start</a>
         </div>
-        <p class="hero-note">Free and open source. No account needed.</p>
+        <p class="hero-note">Open-source language. Create a free account to use the hosted studio.</p>
       </div>
       <figure class="flow-panel sd-card" aria-label="Example flow: input 21, multiply by 2, output 42">
         <div class="flow-caption"><span class="eyebrow">A little logic goes a long way</span><slang-type kind="number">number</slang-type></div>
@@ -55,17 +55,17 @@
         <p class="eyebrow">From an idea to a working flow</p>
         <h2 id="steps-title">Make the connections.</h2>
         <div class="steps">
-          <article class="sd-card"><span class="step-number">01 / EXPLORE</span><h3>Start with a small example.</h3><p>Open <strong>Double a number</strong> in the playground. Follow its connections or switch to YAML to see the definition.</p><slang-type kind="number">number → number</slang-type></article>
-          <article class="sd-card"><span class="step-number">02 / RUN</span><h3>See your program respond.</h3><p>Press <strong>Run</strong>, enter <strong>21</strong> in Input, then select <strong>Send</strong>. Watch <strong>42</strong> appear in Output.</p><span class="sd-badge sd-badge--success">Real runtime · live results</span></article>
-          <article class="sd-card"><span class="step-number">03 / CREATE</span><h3>Make something of your own.</h3><p>Create an operator, connect blocks, and save your changes. Export your workspace to keep a backup or continue later.</p><slang-type kind="generic">Your next idea</slang-type></article>
+          <article class="sd-card"><span class="step-number">01 / EXPLORE</span><h3>Start with a small example.</h3><p>Create a blueprint from the <strong>Echo</strong> template in the studio. Follow the connection from input to output.</p><slang-type kind="number">input → output</slang-type></article>
+          <article class="sd-card"><span class="step-number">02 / RUN</span><h3>See your program respond.</h3><p>Open the blueprint in the studio, press <strong>Test</strong>, enter a JSON value and select <strong>Submit</strong>. Watch it appear in Output.</p><span class="sd-badge sd-badge--success">Real runtime · live results</span></article>
+          <article class="sd-card"><span class="step-number">03 / CREATE</span><h3>Make something of your own.</h3><p>Connect operators and save your blueprint. Add a REST-API deployment to give your program its own public HTTPS address.</p><slang-type kind="generic">Your next idea</slang-type></article>
         </div>
       </div>
     </section>
     <section class="workspace-section wrap" aria-labelledby="workspace-title">
-      <div><p class="eyebrow">Room to experiment</p><h2 id="workspace-title">Your browser.<br>Your workspace.</h2><p>Work with numbers, strings, JSON, CSV, streams, and flow control. For files, databases, email, and network connections, run Slang locally.</p><a class="sd-button sd-button--outline" href="https://github.com/Bitspark/slang#how-to-install">Set up Slang locally ↗</a></div>
-      <div class="sd-callout"><h3>A few things to know</h3><p>A browser cookie keeps your workspace separate from other visitors. Saved programs stay for <strong>30 days of inactivity</strong>. Export a backup before clearing cookies or changing browsers.</p><p>Running programs stop after 20 minutes of inactivity. If the playground is full, try again in a few minutes.</p></div>
+      <div><p class="eyebrow">Room to experiment</p><h2 id="workspace-title">Your account.<br>Your blueprints.</h2><p>Work with numbers, strings, JSON, CSV, streams, and flow control. The studio saves your blueprints to your account. Run Slang locally for unrestricted access to files and private services.</p><a class="sd-button sd-button--outline" href="https://github.com/Bitspark/slang#how-to-install">Set up Slang locally ↗</a></div>
+      <div class="sd-callout"><h3>A few things to know</h3><p>Sign in at <strong>slang.run</strong> and keep the recovery code shown at signup. Your saved blueprints follow your account across browsers. Email recovery is not enabled.</p><p>Public deployments run at <strong>&lt;deployment-id&gt;.slangapps.com</strong>. Anyone with their URL can invoke them. Capacity is limited to five deployments per account; stop or remove programs you no longer need.</p></div>
     </section>
   </main>
-  <footer class="site-footer wrap"><span>Slang by Bitspark · Built to connect.</span><nav aria-label="Footer navigation"><a href="https://github.com/Bitspark/slang/issues">Questions & bugs</a><a href="https://github.com/Bitspark/slang-ui">Editor source</a><a href="https://bitspark.github.io/slang-design/">Slang Design ↗</a></nav></footer>
+  <footer class="site-footer wrap"><span>Slang by Bitspark · Built to connect.</span><nav aria-label="Footer navigation"><a href="https://github.com/Bitspark/slang/issues">Questions & bugs</a><a href="https://github.com/Bitspark/slang.run">Editor source</a><a href="https://bitspark.github.io/slang-design/">Slang Design ↗</a></nav></footer>
 </body>
 </html>
