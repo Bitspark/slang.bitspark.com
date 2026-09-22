@@ -1,0 +1,73 @@
+/* Product layout. Visual roles, fonts, and controls come from Slang Design. */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--sd-bg); color: var(--sd-text); }
+a { color: var(--sd-link); text-underline-offset: 4px; }
+h1, h2, h3 { font-family: var(--sd-font-display); font-weight: 300; line-height: 1.2; }
+h1 { font-size: clamp(40px, 4.7vw, 66px); letter-spacing: -2px; margin: 18px 0 24px; }
+h2 { font-size: clamp(30px, 3.3vw, 42px); margin: 16px 0 24px; }
+h3 { font-size: 23px; }
+p { color: var(--sd-text-muted); }
+.wrap { width: min(var(--sd-content-width), calc(100% - 80px)); margin-inline: auto; }
+.brand { display: inline-flex; flex: 0 0 auto; width: 142px; }
+.brand img { width: 100%; height: auto; }
+.logo-dark { display: none; }
+[data-theme='dark'] .logo-dark { display: block; }
+[data-theme='dark'] .logo-light { display: none; }
+.site-header { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: var(--sd-space-5); border-bottom: 1px solid var(--sd-border); }
+.site-header nav, .site-footer nav { display: flex; gap: var(--sd-space-5); align-items: center; flex-wrap: wrap; }
+.site-header nav > a:not(.sd-button), .site-footer a { font-size: 13px; text-decoration: none; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sd-space-7); align-items: center; padding-block: var(--sd-space-9); }
+.hero h1 em { color: var(--sd-primary); font-style: normal; }
+.eyebrow { color: var(--sd-primary); font: 12px/1.6 var(--sd-font-code); letter-spacing: 1.4px; text-transform: uppercase; }
+.eyebrow::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--sd-accent); margin-right: 10px; vertical-align: middle; }
+.intro { font-size: 18px; line-height: 1.8; max-width: 570px; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--sd-space-3); margin-block: var(--sd-space-6); }
+.hero-note { font-size: 12px; margin-top: -12px; }
+.flow-panel { margin: 0; padding: var(--sd-space-5); background-color: var(--sd-canvas); background-image: radial-gradient(var(--sd-grid) 1px, transparent 1px); background-size: 18px 18px; box-shadow: var(--sd-shadow); }
+.flow-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sd-space-3); align-items: center; }
+.flow-caption .eyebrow { font-size: 10px; }
+.flow-diagram { display: flex; align-items: center; margin-block: 88px; }
+.flow-node { position: relative; flex: 1; min-width: 0; padding: 20px 12px; background: var(--sd-surface); border: 1px solid var(--sd-border-strong); border-radius: var(--sd-radius-sm); box-shadow: var(--sd-shadow); }
+.node-kind { display: block; font-size: 11px; color: var(--sd-text-muted); }
+.flow-node strong { display: block; font: 28px/1.6 var(--sd-font-code); }
+.flow-node.output { border-color: var(--sd-accent); }
+.flow-wire { width: 28px; height: 2px; background: var(--sd-type-number); }
+.port { position: absolute; right: -4px; top: calc(50% - 4px); width: 7px; height: 9px; background: var(--sd-type-number); }
+.flow-panel figcaption { color: var(--sd-text-muted); text-align: center; font-size: 12px; }
+.steps-section { background: var(--sd-surface-subtle); padding-block: var(--sd-space-8); border-block: 1px solid var(--sd-border); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sd-space-5); margin-top: var(--sd-space-7); }
+.steps h3 { margin: 24px 0 16px; }
+.steps p { font-size: 14px; line-height: 1.8; }
+.step-number { font: 11px var(--sd-font-code); letter-spacing: 1px; color: var(--sd-accent); }
+.workspace-section { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sd-space-8); align-items: center; padding-block: var(--sd-space-8); }
+.workspace-section .sd-callout { padding: var(--sd-space-6); }
+.sd-callout p:last-child { margin-bottom: 0; }
+.site-footer { padding-block: var(--sd-space-6); display: flex; justify-content: space-between; gap: var(--sd-space-5); flex-wrap: wrap; border-top: 1px solid var(--sd-border); color: var(--sd-text-muted); font-size: 12px; }
+.guide { padding: clamp(20px, 5vw, 64px); max-width: 900px; margin-inline: auto; }
+.guide-header { display: flex; align-items: center; justify-content: space-between; gap: var(--sd-space-4); margin-bottom: var(--sd-space-7); }
+.guide h1 { font-size: clamp(34px, 4vw, 48px); }
+.guide-steps { padding-left: 28px; margin-block: var(--sd-space-7); }
+.guide-steps li { padding: 0 0 22px 12px; }
+.guide-steps li::marker { font: 16px var(--sd-font-code); color: var(--sd-accent); }
+.guide-steps h2 { font-size: 22px; margin: 0 0 12px; }
+.type-example { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font: 13px var(--sd-font-code); }
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; padding-block: var(--sd-space-8); }
+  .flow-diagram { margin-block: 56px; }
+  .site-header nav { gap: var(--sd-space-3); }
+}
+@media (max-width: 650px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-header { padding-block: var(--sd-space-4); align-items: flex-start; flex-wrap: wrap; gap: var(--sd-space-4); }
+  .site-header nav { width: 100%; justify-content: space-between; gap: 12px; }
+  .site-header nav .sd-button { padding: 6px 10px; }
+  .brand { width: 126px; }
+  h1 { letter-spacing: -1px; }
+  .hero { gap: var(--sd-space-6); }
+  .steps, .workspace-section { grid-template-columns: 1fr; gap: var(--sd-space-5); }
+  .flow-panel { padding: var(--sd-space-4); }
+  .flow-node { padding: 16px 10px; }
+  .flow-wire { width: 18px; }
+  .site-footer nav { gap: var(--sd-space-4); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
