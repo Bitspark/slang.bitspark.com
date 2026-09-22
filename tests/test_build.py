@@ -33,7 +33,7 @@ class WebsiteReleaseTests(unittest.TestCase):
     def test_all_html_and_css_dependencies_exist(self):
         site = ROOT / "dist/site"
         self.assertTrue((site / "index.html").is_file(), "Run tools/build.py first")
-        html = list(site.rglob("*.html")) + [ROOT / "editor-head.html", ROOT / "editor-shell.html"]
+        html = list(site.rglob("*.html"))
         for source in html:
             parser = Resources()
             parser.feed(source.read_text(encoding="utf-8"))

@@ -10,5 +10,7 @@ Its original styles, components, fonts, SVG artwork and license files are
 included unchanged under site/design/0.2.1/ in built releases.
 See that package's NOTICE and assets/licenses/ for font attribution.
 
-The Angular editor itself is distributed separately by Bitspark/slang-ui.
-The compatibility adapter in this repository only adds website presentation.
+The Angular editor is distributed separately by Bitspark/slang-ui. The
+compatibility adapter that gave it this website's presentation was moved to
+slang-infra/deploy/public/compat, beside the installer that applies it, and is
+no longer part of releases from v0.3.0 onward.

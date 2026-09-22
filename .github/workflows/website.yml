@@ -20,7 +20,7 @@ jobs:
           python-version: '3.13'
       - run: python tools/build.py
       - run: python -m unittest discover -s tests -v
-      - run: node --check site/assets/theme.js && node --check site/assets/editor.js
+      - run: node --check site/assets/theme.js
       - name: Check tag matches the website version
         if: github.ref_type == 'tag'
         env:
