@@ -21,10 +21,10 @@ Roboto and Roboto Slab, transparent theme-specific logos, and typed connections.
 | [slang-design](https://github.com/Bitspark/slang-design) | Shared design tokens, CSS recipes, components, fonts, and logos |
 | [slang](https://github.com/Bitspark/slang) | Language runtime, workspace gateway, and production infrastructure |
 
-The working playground remains at `tryslang.com/app/` while the cloud frontend
-is restored. Existing browser workspace cookies stay on that origin. Product
-pages link to the working playground; move those links to `slang.run` when its
-actual application is ready. Do not substitute a static design specimen for it.
+The production studio is at `https://slang.run/`: account-based editing and
+private tests, with public program endpoints on `slangapps.com`. The product
+pages and quick start describe that flow. `tryslang.com` redirects to the product
+site. The legacy Angular presentation assets remain for local installations.
 
 ## Develop
 
@@ -56,11 +56,10 @@ connections use the design system's generic wire color.
 
 ## Verify and release
 
-Before a release, check light/dark themes, transparent logos, narrow layouts,
-theme persistence, keyboard focus, search, program creation/save/reload, and a
-real run: **Double a number → Run → 21 → Send → 42 → Stop**. Check YAML and
-workspace import/export too. Build tests follow HTML/CSS/font asset references
-and verify that every shipped Slang Design byte matches upstream.
+Before a release, check light/dark themes, logos, narrow layouts, theme
+persistence, keyboard focus and the studio links. Follow the quick start against
+the actual studio: signup, save recovery code, create Echo, Test, Submit, then
+deploy in HTTP mode. Build tests verify resource references and upstream assets.
 
 Open a PR for changes, pass CI, and merge to `main`. Update `website.json` and
 tag `v<version>` for releases. The workflow publishes a reproducible ZIP and
@@ -68,9 +67,10 @@ SHA-256 file; release tags must not be moved. The ZIP contains `site/`,
 `editor-head.html`, `editor-shell.html`, and licenses. It contains no backend,
 credentials, or visitor data.
 
-Deployment is owned by `slang/deploy/public`: update its `website.lock.json` to
-the release URL and checksum, then use its frontend-only installer. Website
-updates do not restart active programs. The runtime repository keeps the pinned
-version and rollback instructions; website changes no longer live there.
+Production deployment is owned by `slang/deploy/cloud`: the product site is a
+static Caddy site on `slang-app`. Its release manifest pins the website revision
+and artifact hash. Legacy `slang/deploy/public` keeps its own website lock for
+older standalone playground installations; it is no longer the active product
+site deployment.
 
 New code: Apache-2.0. See [NOTICE](NOTICE) for origin and dependency attribution.
