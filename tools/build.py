@@ -50,8 +50,8 @@ def build():
             target = design / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(archive.read(item))
-    (design / "source.json").write_text(json.dumps(lock, indent=2) + "\n", encoding="utf-8")
-    (dist / "site/website-version.json").write_text(json.dumps(website, indent=2) + "\n", encoding="utf-8")
+    (design / "source.json").write_text(json.dumps(lock, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (dist / "site/website-version.json").write_text(json.dumps(website, indent=2) + "\n", encoding="utf-8", newline="\n")
     for name in ["editor-head.html", "editor-shell.html", "LICENSE", "NOTICE"]:
         shutil.copyfile(ROOT / name, dist / name)
     release = ROOT / "release"
@@ -62,6 +62,7 @@ def build():
             if source.is_file():
                 info = zipfile.ZipInfo(source.relative_to(dist).as_posix(), (2026, 1, 1, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
+                info.create_system = 3
                 info.external_attr = 0o644 << 16
                 archive.writestr(info, source.read_bytes())
     checksum = hashlib.sha256(artifact.read_bytes()).hexdigest()
