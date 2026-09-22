@@ -36,7 +36,8 @@ Angular editor by the runtime repository's public deployment.
 `design-system.lock.json` pins an immutable Slang Design commit and archive
 SHA-256. The build verifies it, then copies its unmodified `styles/`,
 `components/`, and `assets/` together. That preserves font paths and includes
-all upstream license notices. No third-party font or logo requests are made.
+all upstream license notices. Product-page fonts and logos are self-hosted.
+The released legacy editor still loads its existing CodeMirror and icon resources.
 Product CSS defines layout and maps legacy editor selectors to semantic tokens;
 it does not carry a duplicate palette or a fork of the design-system recipes.
 

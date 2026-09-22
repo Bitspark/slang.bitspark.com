@@ -58,7 +58,7 @@ def build():
     release.mkdir(exist_ok=True)
     artifact = release / f'slang-website-v{website["version"]}.zip'
     with zipfile.ZipFile(artifact, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        for source in sorted(dist.rglob("*")):
+        for source in sorted(dist.rglob("*"), key=lambda path: path.relative_to(dist).as_posix()):
             if source.is_file():
                 info = zipfile.ZipInfo(source.relative_to(dist).as_posix(), (2026, 1, 1, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED
