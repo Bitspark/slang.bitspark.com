@@ -67,9 +67,9 @@ SHA-256 file; release tags must not be moved. The ZIP contains `site/`,
 `editor-head.html`, `editor-shell.html`, and licenses. It contains no backend,
 credentials, or visitor data.
 
-Production deployment is owned by `slang/deploy/cloud`: the product site is a
+Production deployment is owned by `slang-infra/deploy/cloud`: the product site is a
 static Caddy site on `slang-app`. Its release manifest pins the website revision
-and artifact hash. Legacy `slang/deploy/public` keeps its own website lock for
+and artifact hash. Legacy `slang-infra/deploy/public` keeps its own website lock for
 older standalone playground installations; it is no longer the active product
 site deployment.
 
