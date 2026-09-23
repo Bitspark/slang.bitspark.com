@@ -48,6 +48,15 @@ class WebsiteReleaseTests(unittest.TestCase):
             for url in urls:
                 self.assertTrue((source.parent / unquote(url)).is_file(), f"Missing CSS dependency: {source}: {url}")
 
+    def test_every_page_links_the_imprint(self):
+        # German law requires the imprint to be reachable from every page.
+        site = ROOT / "dist/site"
+        pages = [page for page in site.rglob("*.html") if "design" not in page.relative_to(site).parts]
+        self.assertTrue(pages, "Run tools/build.py first")
+        self.assertTrue((site / "imprint/index.html").is_file())
+        for page in pages:
+            self.assertIn('href="/imprint/"', page.read_text(encoding="utf-8"), f"No imprint link: {page}")
+
     def test_design_package_is_upstream_and_versioned(self):
         lock = json.loads((ROOT / "design-system.lock.json").read_text())
         package = ROOT / "dist/site/design" / lock["version"]
