@@ -56,6 +56,26 @@ adapter links its shared styles and logos from. Changing the pinned design
 version therefore changes the paths that installation resolves, which it does
 by reading the version out of the installed release.
 
+## Imprint and privacy policy
+
+`/imprint/` and `/privacy/` are generated at build time, never edited as pages.
+[`legal/legal.json`](legal/legal.json) holds this deployment's facts: the
+operator, supervisory authority, hosting provider, the covered addresses, and
+the privacy settings the servers run with. `legal/<templates>/` holds the
+wording for one legal framework; `eu-de` covers the GDPR, the TDDDG and the
+German imprint duty. The optional `design_reference` entry adds the section on
+the GitHub-hosted design site.
+
+For another jurisdiction, provide a different data file (`python tools/build.py
+path/to/legal.json`) and, where the law differs, a template directory named by
+its `templates` field. The build fails on a missing or invalid value.
+
+The `privacy` block must equal the servers' `/srv/slang/privacy.json` (see the
+infrastructure runbook). The build publishes it as `site/privacy-settings.json`,
+and the infrastructure's release tool refuses to install a website whose stated
+settings differ from the host's. Change both together, and update
+`policy_updated` whenever the policy's content changes.
+
 ## Verify and release
 
 Before a release, check light/dark themes, logos, narrow layouts, theme

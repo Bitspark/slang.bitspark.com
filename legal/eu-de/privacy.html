@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy policy — Slang</title>
+  <link rel="canonical" href="https://slang.bitspark.com/privacy/">
+  <link rel="icon" type="image/svg+xml" href="/design/0.2.1/assets/slang-mark.svg">
+  <link rel="stylesheet" href="/design/0.2.1/styles/index.css">
+  <link rel="stylesheet" href="/assets/site.css?v=3">
+  <script src="/assets/theme.js?v=1"></script>
+  <script type="module" src="/design/0.2.1/components/index.js"></script>
+</head>
+<body class="sd-scope guide">
+  <a class="sd-skip" href="#main">Skip to privacy policy</a>
+  <header class="guide-header"><a href="https://slang.bitspark.com/">← Slang home</a><button class="sd-button sd-button--quiet sd-button--small" data-theme-toggle aria-label="Switch to dark theme">Dark theme</button></header>
+  <main id="main" tabindex="-1" class="policy">
+    <p class="eyebrow">Legal / Privacy</p>
+    <h1>Privacy policy</h1>
+    <p class="intro">What personal data ${controller_name} processes when you use the Slang website, the Slang studio and the programs you publish with it.</p>
+    <p class="policy-updated">Last updated: ${policy_updated}</p>
+
+    <aside class="sd-callout">
+      <strong>In short</strong>
+      <ul>
+        <li>No analytics, advertising, tracking or social media plugins.</li>
+        <li>The website and the studio load nothing from other companies' servers.</li>
+        <li>Our servers are in ${hosting_country}.${design_summary}</li>
+        <li>An account needs a username and a password, but no email address.</li>
+        <li>${ip_summary}</li>
+        <li>The studio sets two cookies, both only to keep you signed in.</li>
+      </ul>
+    </aside>
+
+    <h2 id="controller">Who is responsible</h2>
+    <p>The controller under the EU General Data Protection Regulation (GDPR) is:</p>
+    <p>${controller_name}<br>${controller_address}<br><a href="mailto:${email}">${email}</a> · <a href="tel:${phone_href}">${phone}</a><br>${representative}</p>
+    <p>Write to <a href="mailto:${email}">${email}</a> with any question about your data. See also the <a href="/imprint/">imprint</a>.</p>
+    <p>This policy covers ${covered}. Addresses that only redirect elsewhere are covered by the policy of the site they lead to.</p>
+
+    <h2 id="website">Visiting this website</h2>
+    <p>When you open a page, your browser sends our server your IP address, the address of the page, and technical details such as your browser type. The server needs these to deliver the page. It keeps no access log, so none of this is stored afterwards. This website sets no cookies.</p>
+    <p>If you use the light/dark theme switch, your choice is saved in your browser's local storage under <code>tryslang-theme</code>. It stays on your device and is never sent to us.</p>
+    <p>Legal basis: our legitimate interest in providing the website (Art. 6(1)(f) GDPR). The theme setting is stored because you ask for it (§ 25(2) no. 2 TDDDG).</p>
+
+    <h2 id="studio">Using the studio at slang.run</h2>
+    <h3>Your account</h3>
+    <p>To create an account we store your username, a display name (your username unless you choose another), your password and a recovery code. The password and recovery code are stored only as salted one-way hashes (scrypt), never in readable form. We do not ask for your email address.</p>
+    <p>When you sign up or sign in, your username and display name are passed to other parts of the service on the same servers, for example to apply your deployment limit.</p>
+    <p>Legal basis: providing the studio you signed up for (Art. 6(1)(b) GDPR). You cannot use the studio without an account.</p>
+
+    <h3>What you create</h3>
+    <p>Your blueprints and deployments are stored with your account and are private to you, unless you publish a program (see <a href="#programs">Programs you publish</a>). Our administrators can access account data where needed to run the service or fix a problem.</p>
+
+    <h3>Cookies and browser storage</h3>
+    <p>The studio sets two cookies. Both are needed to sign you in, are readable only by our server (HttpOnly) and are sent only to slang.run over HTTPS.</p>
+    <div class="policy-table">
+      <table class="sd-table">
+        <thead><tr><th scope="col">Cookie</th><th scope="col">Purpose</th><th scope="col">Lifetime</th></tr></thead>
+        <tbody>
+          <tr><td><code>__Host-slang_access</code></td><td>Proves that you are signed in</td><td>15 minutes</td></tr>
+          <tr><td><code>__Host-slang_refresh</code></td><td>Keeps you signed in between visits</td><td>${session_lifetime}, or until you sign out</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The studio also keeps your editor state and tutorial progress in your browser's local storage. That data stays on your device.</p>
+    <p>Legal basis: these are strictly necessary for the service you requested, so no consent is needed (§ 25(2) no. 2 TDDDG); the processing itself is based on Art. 6(1)(b) GDPR.</p>
+
+    <h3>Request logs</h3>
+    <p>The services behind the studio log each request they receive: ${request_log_fields}. We use these logs to detect errors, abuse and attacks. Server logs, including these request logs, are deleted after ${log_retention}.</p>
+    <p>To slow down password guessing, we also keep a one-way hash of your IP address with a counter for failed attempts. It is deleted automatically after at most one hour.</p>
+    <p>Legal basis: our legitimate interest in running the service securely (Art. 6(1)(f) GDPR).</p>
+
+    <h2 id="programs">Programs you publish</h2>
+    <p>If you deploy a program as a REST API, it gets its own address under slangapps.com, and anyone with that address can send it requests. Requests go straight to your program. We do not store what is sent to it or what it returns.</p>
+    <p>We record execution events (time, deployment and type of event) and anything your program writes to its log, and show them to you in the studio. We keep them for ${history_retention}, and at most ${history_events} events and ${history_logs} log entries per deployment. Test runs in the studio are recorded the same way.</p>
+    <p>You decide what your program does with the data it receives. If it processes personal data of other people, you are responsible for that processing and for informing them.</p>
+${design_section}
+    <h2 id="hosting">Hosting and recipients</h2>
+    <p>Our servers are provided by ${hosting_provider}, ${hosting_address}, in its data centre in ${hosting_location}. ${hosting_provider} processes data only on our behalf and under our instructions (Art. 28 GDPR).</p>
+    <p>We do not sell your data or pass it on to anyone else, except where the law requires us to. ${transfer_sentence}</p>
+
+    <h2 id="backups">Backups</h2>
+    <p>We make an encrypted backup of the service's databases every day, including accounts, blueprints, deployments and recorded events. Backups are kept for ${backup_retention}, on both of our servers. Data you delete can therefore remain in a backup until that backup expires.</p>
+
+    <h2 id="links">Links to other websites</h2>
+    <p>This website and the studio link to other sites, such as our source code and issue tracker on GitHub. Those sites' own privacy policies apply once you follow a link.</p>
+
+    <h2 id="rights">Your rights</h2>
+    <p>You have the right to access your data (Art. 15 GDPR), to have it corrected (Art. 16), deleted (Art. 17) or its processing restricted (Art. 18), and to receive it in a portable format (Art. 20).</p>
+    <p><strong>You can object at any time</strong> to processing based on our legitimate interests (Art. 21 GDPR), on grounds relating to your particular situation.</p>
+    <p>You can delete your blueprints and deployments yourself in the studio. To delete your account, or to exercise any other right, write to <a href="mailto:${email}">${email}</a>. Because we do not know your email address, we may ask you to confirm that you control the account.</p>
+    <p>You can also complain to a data protection supervisory authority. The authority responsible for us is the ${authority_name}, ${authority_address}, <a href="${authority_url}" rel="noopener">${authority_host}</a>.</p>
+
+    <h2 id="automated">No automated decisions</h2>
+    <p>We do not make automated decisions about you or build profiles (Art. 22 GDPR).</p>
+
+    <h2 id="changes">Changes</h2>
+    <p>We update this policy when the service changes. The date at the top shows the current version.</p>
+  </main>
+  <footer class="guide-footer"><a href="/">Slang home</a><a href="/imprint/">Imprint</a><a href="/privacy/" aria-current="page">Privacy</a></footer>
+</body>
+</html>

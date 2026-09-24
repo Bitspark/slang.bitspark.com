@@ -53,6 +53,12 @@ p { color: var(--sd-text-muted); }
 .imprint { display: grid; grid-template-columns: max-content 1fr; gap: var(--sd-space-4) var(--sd-space-6); margin-block: var(--sd-space-7); }
 .imprint dt { font: 12px/1.9 var(--sd-font-code); letter-spacing: 1px; text-transform: uppercase; color: var(--sd-text-muted); }
 .imprint dd { margin: 0; line-height: 1.7; }
+.policy h2 { font-size: 22px; margin: var(--sd-space-8) 0 var(--sd-space-3); }
+.policy h3 { font-size: 17px; margin: var(--sd-space-6) 0 var(--sd-space-2); }
+.policy p, .policy li { line-height: 1.7; max-width: 70ch; }
+.policy .sd-callout ul { margin: var(--sd-space-2) 0 0; padding-left: 20px; }
+.policy-updated { color: var(--sd-text-muted); font-size: 13px; }
+.policy-table { overflow-x: auto; margin-block: var(--sd-space-4); }
 .guide-footer { display: flex; gap: var(--sd-space-5); margin-top: var(--sd-space-8); padding-top: var(--sd-space-5); border-top: 1px solid var(--sd-border); font-size: 12px; }
 .guide-footer a { text-decoration: none; }
 .type-example { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font: 13px var(--sd-font-code); }
