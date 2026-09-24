@@ -1,0 +1,61 @@
+{
+  "templates": "eu-de",
+  "policy_updated": "2026-09-24",
+  "controller": {
+    "name": "Bitspark GmbH",
+    "address": [
+      "Gebersdorfer Str. 277",
+      "90449 Nürnberg",
+      "Germany"
+    ],
+    "email": "info@bitspark.com",
+    "phone": "+49 911 4947 0667",
+    "representative": "Dr. Julian Matschinske (Managing Director)",
+    "register": [
+      "Amtsgericht Nürnberg",
+      "HRB 36600"
+    ],
+    "vat_id": "DE304214735"
+  },
+  "supervisory_authority": {
+    "name": "Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)",
+    "address": "Promenade 18, 91522 Ansbach, Germany",
+    "url": "https://www.lda.bayern.de/"
+  },
+  "hosting": {
+    "provider": "Hetzner Online GmbH",
+    "address": "Industriestr. 25, 91710 Gunzenhausen, Germany",
+    "location": "Falkenstein, Germany",
+    "country": "Germany"
+  },
+  "covered": [
+    "slang.bitspark.com",
+    "slang.run",
+    "slangapps.com",
+    "design.slang.bitspark.com"
+  ],
+  "design_reference": {
+    "address": "design.slang.bitspark.com",
+    "host": "GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
+    "privacy_statement": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+  },
+  "privacy": {
+    "request_logs": {
+      "client_address": "none"
+    },
+    "server_logs": {
+      "retention_days": 7
+    },
+    "execution_history": {
+      "retention_days": 31,
+      "max_events_per_deployment": 10000,
+      "max_logs_per_deployment": 1000
+    },
+    "backups": {
+      "retention_days": 7
+    },
+    "sign_in": {
+      "session_days": 30
+    }
+  }
+}

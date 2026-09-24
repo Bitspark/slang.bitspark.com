@@ -4,10 +4,13 @@ import io
 import json
 from pathlib import Path
 import shutil
+import sys
 import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+import legal  # noqa: E402
 
 
 def design_archive(lock):
@@ -24,7 +27,7 @@ def design_archive(lock):
     return data
 
 
-def build():
+def build(legal_data=None):
     lock = json.loads((ROOT / "design-system.lock.json").read_text())
     website = json.loads((ROOT / "website.json").read_text())
     data = design_archive(lock)
@@ -36,6 +39,8 @@ def build():
         shutil.rmtree(dist)
     dist.mkdir()
     shutil.copytree(ROOT / "site", dist / "site")
+    # Imprint and privacy policy come from per-deployment data; see tools/legal.py.
+    legal.render(legal_data or ROOT / "legal/legal.json", dist / "site")
     design = dist / "site/design" / lock["version"]
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
         prefix = "slang-design-" + lock["commit"] + "/"
@@ -71,4 +76,5 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    # Another deployment can pass its own legal data: build.py path/to/legal.json
+    build(sys.argv[1] if len(sys.argv) > 1 else None)
